@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://stu7fdegacic" path="res://character_body_2d.gd" id="1_n72wj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rxhld"]
-size = Vector2(20, 30)
+size = Vector2(20, 40)
 
 [node name="Node2D" type="Node2D"]
 
