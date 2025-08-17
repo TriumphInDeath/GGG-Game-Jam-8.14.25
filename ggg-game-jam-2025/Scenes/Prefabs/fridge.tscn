@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvdsbgnjyo8hf"]
+
+[sub_resource type="Gradient" id="Gradient_wyuno"]
+colors = PackedColorArray(1, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_lb8te"]
+gradient = SubResource("Gradient_wyuno")
+width = 3600
+height = 7000
+fill_to = Vector2(0.028, 0)
+repeat = 1
+
+[node name="Fridge" type="Sprite2D"]
+z_index = -10
+texture = SubResource("GradientTexture2D_lb8te")

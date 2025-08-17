@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://chtojhancwlfv"]
+
+[ext_resource type="PackedScene" uid="uid://ckra6frjy5j33" path="res://Scenes/Prefabs/Player.tscn" id="1_wdwl3"]
+[ext_resource type="PackedScene" uid="uid://bvdsbgnjyo8hf" path="res://Scenes/Prefabs/fridge.tscn" id="2_lktdu"]
+[ext_resource type="PackedScene" uid="uid://cdyqa5vl25grd" path="res://Scenes/Prefabs/unstable_platform.tscn" id="3_7u35h"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_lktdu"]
+
+[node name="TestLevel" type="Node2D"]
+
+[node name="Fridge" parent="." instance=ExtResource("2_lktdu")]
+
+[node name="TestPlatform" type="AnimatableBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TestPlatform"]
+position = Vector2(0, 130)
+shape = SubResource("WorldBoundaryShape2D_lktdu")
+
+[node name="Player" parent="." instance=ExtResource("1_wdwl3")]
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+offset = Vector2(0, -200)
+zoom = Vector2(0.5, 0.5)
+position_smoothing_enabled = true
+position_smoothing_speed = 50.0
+
+[node name="UnstablePlatform" parent="." instance=ExtResource("3_7u35h")]
+position = Vector2(500, 50)

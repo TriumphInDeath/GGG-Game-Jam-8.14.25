@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://cdyqa5vl25grd"]
+
+[ext_resource type="Texture2D" uid="uid://be6nwqj05xh18" path="res://Sprites/icon.svg" id="1_56sqn"]
+[ext_resource type="Script" uid="uid://c1u4m5y84frgm" path="res://Scripts/unstable_platform.gd" id="1_um5h4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1gl4x"]
+size = Vector2(200, 200)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3a73m"]
+size = Vector2(192, 4)
+
+[node name="UnstablePlatform" type="AnimatableBody2D"]
+script = ExtResource("1_um5h4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1.55, 1.55)
+texture = ExtResource("1_56sqn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_1gl4x")
+
+[node name="StoodOn" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StoodOn"]
+position = Vector2(0, -100)
+shape = SubResource("RectangleShape2D_3a73m")

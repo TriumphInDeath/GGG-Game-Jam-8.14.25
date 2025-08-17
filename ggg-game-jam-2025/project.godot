@@ -11,5 +11,6 @@ config_version=5
 [application]
 
 config/name="GGG Game Jam 2025"
+run/main_scene="uid://chtojhancwlfv"
 config/features=PackedStringArray("4.4", "Forward Plus")
-config/icon="res://Assets/icon.svg"
+config/icon="res://Sprites/icon.svg"
