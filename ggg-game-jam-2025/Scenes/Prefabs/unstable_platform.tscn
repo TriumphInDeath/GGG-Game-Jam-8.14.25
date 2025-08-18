@@ -24,3 +24,6 @@ shape = SubResource("RectangleShape2D_1gl4x")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StoodOn"]
 position = Vector2(0, -100)
 shape = SubResource("RectangleShape2D_3a73m")
+
+[connection signal="body_entered" from="StoodOn" to="." method="_on_stood_on_body_entered"]
+[connection signal="body_exited" from="StoodOn" to="." method="_on_stood_on_body_exited"]

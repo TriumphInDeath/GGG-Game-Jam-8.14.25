@@ -217,7 +217,7 @@ script = ExtResource("1_fiu32")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ley4d")
-animation = &"running"
+animation = &"blink"
 autoplay = "still"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
