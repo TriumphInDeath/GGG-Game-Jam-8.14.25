@@ -2,12 +2,13 @@ extends CharacterBody2D
 
 
 const SPEED = 300.0
-const JUMP_VELOCITY = -1000.0
-const GRAVITY = 2000 # default gravity is 980
+const JUMP_VELOCITY = -800.0
+const GRAVITY = 1000 # default gravity is 980
 
 var _airTime = 0
 var _canJump = true
 
+# @onready delays calling this until after children have loaded so the sprite can be found
 @onready var animated_sprite = $AnimatedSprite2D
 
 func _physics_process(delta: float) -> void:

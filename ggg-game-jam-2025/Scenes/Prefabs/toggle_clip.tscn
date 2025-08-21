@@ -1,0 +1,84 @@
+[gd_scene load_steps=10 format=3 uid="uid://cjxlwti12625q"]
+
+[ext_resource type="Script" uid="uid://ckbq7glefqqhq" path="res://Scenes/Prefabs/toggle_clip.gd" id="1_mr4ip"]
+[ext_resource type="Texture2D" uid="uid://d4nj2o4b7ryk4" path="res://Sprites/sprite_sheet_test.PNG" id="2_t8vvr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mr4ip"]
+atlas = ExtResource("2_t8vvr")
+region = Rect2(4492, 0, 499, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t8vvr"]
+atlas = ExtResource("2_t8vvr")
+region = Rect2(3993, 0, 499, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iho0v"]
+atlas = ExtResource("2_t8vvr")
+region = Rect2(4991, 0, 499, 500)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a8da2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mr4ip")
+}],
+"loop": false,
+"name": &"closed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t8vvr")
+}],
+"loop": false,
+"name": &"holding_paper",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iho0v")
+}],
+"loop": false,
+"name": &"open",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mr4ip"]
+size = Vector2(237.789, 192.378)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a8da2"]
+atlas = ExtResource("2_t8vvr")
+region = Rect2(0, 849.305, 485.231, 769.628)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t8vvr"]
+size = Vector2(8, 190)
+
+[node name="ToggleClip" type="AnimatableBody2D"]
+script = ExtResource("1_mr4ip")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_a8da2")
+animation = &"closed"
+autoplay = "closed"
+offset = Vector2(13, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-34.329, 1.866)
+rotation = 1.69122
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_mr4ip")
+
+[node name="HeldObject" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(-19, 425)
+texture = SubResource("AtlasTexture_a8da2")
+
+[node name="StoodOn" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StoodOn"]
+position = Vector2(-19.978, -116.03)
+rotation = 1.69122
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_t8vvr")
+
+[connection signal="body_entered" from="StoodOn" to="." method="_on_stood_on_body_entered"]
+[connection signal="body_exited" from="StoodOn" to="." method="_on_stood_on_body_exited"]

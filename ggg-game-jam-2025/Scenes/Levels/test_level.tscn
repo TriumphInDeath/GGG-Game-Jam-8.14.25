@@ -1,0 +1,75 @@
+[gd_scene load_steps=8 format=3 uid="uid://chtojhancwlfv"]
+
+[ext_resource type="PackedScene" uid="uid://bvdsbgnjyo8hf" path="res://Scenes/Prefabs/fridge.tscn" id="1_npfmg"]
+[ext_resource type="PackedScene" uid="uid://ckra6frjy5j33" path="res://Scenes/Prefabs/Player.tscn" id="2_k8g1k"]
+[ext_resource type="Texture2D" uid="uid://d4nj2o4b7ryk4" path="res://Sprites/sprite_sheet_test.PNG" id="3_x4x4f"]
+[ext_resource type="PackedScene" uid="uid://cdyqa5vl25grd" path="res://Scenes/Prefabs/unstable_platform.tscn" id="4_l7ek2"]
+[ext_resource type="PackedScene" uid="uid://b0r7wt21l3gsi" path="res://Scenes/Prefabs/finish_zone.tscn" id="5_7rivk"]
+[ext_resource type="PackedScene" uid="uid://cjxlwti12625q" path="res://Scenes/Prefabs/toggle_clip.tscn" id="5_k8g1k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jiqwm"]
+size = Vector2(928, 447)
+
+[node name="TestLevel" type="Node2D"]
+
+[node name="Fridge" parent="." instance=ExtResource("1_npfmg")]
+position = Vector2(0, 2260)
+
+[node name="Player" parent="." instance=ExtResource("2_k8g1k")]
+z_index = 5
+position = Vector2(0, -800)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+offset = Vector2(0, -150)
+zoom = Vector2(0.5, 0.5)
+position_smoothing_enabled = true
+position_smoothing_speed = 50.0
+
+[node name="Platforms" type="Node" parent="."]
+
+[node name="Static Platforms" type="Node" parent="Platforms"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Platforms/Static Platforms"]
+position = Vector2(100, 200)
+
+[node name="Sprite2D" type="Sprite2D" parent="Platforms/Static Platforms/StaticBody2D"]
+position = Vector2(0, 150)
+texture = ExtResource("3_x4x4f")
+region_enabled = true
+region_rect = Rect2(1247.63, 15.102, 955.09, 467.384)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Static Platforms/StaticBody2D"]
+position = Vector2(-4, 153.5)
+shape = SubResource("RectangleShape2D_jiqwm")
+one_way_collision = true
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Platforms/Static Platforms"]
+position = Vector2(350, -450)
+
+[node name="Sprite2D" type="Sprite2D" parent="Platforms/Static Platforms/StaticBody2D2"]
+position = Vector2(0, 150)
+texture = ExtResource("3_x4x4f")
+region_enabled = true
+region_rect = Rect2(1247.63, 15.102, 955.09, 467.384)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Static Platforms/StaticBody2D2"]
+position = Vector2(-4, 153.5)
+shape = SubResource("RectangleShape2D_jiqwm")
+one_way_collision = true
+
+[node name="Unstable Platforms" type="Node" parent="Platforms"]
+
+[node name="UnstablePlatform" parent="Platforms/Unstable Platforms" instance=ExtResource("4_l7ek2")]
+position = Vector2(900, 50)
+
+[node name="UnstablePlatform2" parent="Platforms/Unstable Platforms" instance=ExtResource("4_l7ek2")]
+position = Vector2(1200, -200)
+
+[node name="Toggle Clips" type="Node" parent="Platforms"]
+
+[node name="ToggleClip" parent="Platforms/Toggle Clips" instance=ExtResource("5_k8g1k")]
+position = Vector2(-364, -682)
+
+[node name="FinishZone" parent="." instance=ExtResource("5_7rivk")]
+position = Vector2(0, -1265)
+next_level = "test_level_2"
