@@ -17,7 +17,6 @@ position = Vector2(0, 2260)
 
 [node name="Player" parent="." instance=ExtResource("2_k8g1k")]
 z_index = 5
-position = Vector2(0, -800)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 offset = Vector2(0, -150)

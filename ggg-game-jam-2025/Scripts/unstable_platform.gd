@@ -2,11 +2,12 @@ extends AnimatableBody2D
 
 const SHAKE = 5
 
-@onready var _shaking = false
-@onready var _collapsed = false
+var _shaking = false
+var _collapsed = false
 
 @onready var collapse_timer = $CollapseTimer
 @onready var sprite = $Sprite2D
+@onready var collision_shape = $CollisionShape2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -20,7 +21,7 @@ func _process(delta: float) -> void:
 		if (randi_range(0, 5) == 0):
 			sprite.transform.origin += Vector2(randi_range(-SHAKE, SHAKE), randi_range(-SHAKE, SHAKE))
 	if (_collapsed):
-		transform.origin.y += 10
+		transform.origin.y += 20
 
 
 func _on_stood_on_body_entered(body: Node2D) -> void:
@@ -38,9 +39,8 @@ func _on_collapse_timer_timeout() -> void:
 
 func _shake() -> void:
 	_shaking = true
-	print("shake")
 
 func _collapse() -> void:
 	_collapsed = true
 	_shaking = false
-	print("collapse") # transform.y += 100
+	collision_shape.disabled = true

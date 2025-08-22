@@ -8,8 +8,21 @@ const GRAVITY = 1000 # default gravity is 980
 var _airTime = 0
 var _canJump = true
 
+var _character_model = "bunny"
+
+var _falling_string = "%s_falling"
+var _idle_string = "%s_idle"
+var _jumping_string = "%s_jumping"
+var _running_string = "%s_running"
+
+
 # @onready delays calling this until after children have loaded so the sprite can be found
 @onready var animated_sprite = $AnimatedSprite2D
+
+
+func _ready() -> void:
+	_character_model = CharacterChoice.get_character_choice()
+
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -41,9 +54,8 @@ func _physics_process(delta: float) -> void:
 	
 	# Play animations
 	if is_on_floor():
-		if not direction == 0: animated_sprite.play("running")
-		else: animated_sprite.play("idle")
-		
-	# else:
-		# if velocity.y < 0: animated_sprite.play("Jump")
-		# else: animated_sprite.play("Fall")
+		if not direction == 0: animated_sprite.play(_running_string % _character_model)
+		else: animated_sprite.play(_idle_string % _character_model)
+	else:
+		if velocity.y < 0: animated_sprite.play(_jumping_string % _character_model)
+		else: animated_sprite.play(_falling_string % _character_model)

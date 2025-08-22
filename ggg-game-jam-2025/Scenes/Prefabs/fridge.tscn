@@ -1,15 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://bvdsbgnjyo8hf"]
+[gd_scene load_steps=2 format=3 uid="uid://bvdsbgnjyo8hf"]
 
-[sub_resource type="Gradient" id="Gradient_wyuno"]
-colors = PackedColorArray(1, 0, 0, 1, 0, 0, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_lb8te"]
-gradient = SubResource("Gradient_wyuno")
-width = 3600
-height = 7000
-fill_to = Vector2(0.028, 0)
-repeat = 1
+[ext_resource type="Texture2D" uid="uid://c17y5f2cq322j" path="res://Sprites/awesom_fridge.PNG" id="1_lb8te"]
 
 [node name="Fridge" type="Sprite2D"]
 z_index = -10
-texture = SubResource("GradientTexture2D_lb8te")
+texture = ExtResource("1_lb8te")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-1342, -156, -699, -148, -592, -79, -593, -10, -709, 32, -1302, 22, -1344, -24)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(0, -1300)
+polygon = PackedVector2Array(-1342, -156, -698, -148, -592, -79, -593, -10, -709, 32, -1302, 22, -1344, -24)
