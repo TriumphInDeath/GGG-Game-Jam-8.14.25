@@ -8,6 +8,7 @@ const GRAVITY = 1000 # default gravity is 980
 var _airTime = 0
 var _canJump = true
 
+
 var _character_model = "bunny"
 
 var _falling_string = "%s_falling"
@@ -47,10 +48,8 @@ func _physics_process(delta: float) -> void:
 		
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-
+	
 	move_and_slide()
-	
-	
 	
 	# Play animations
 	if is_on_floor():
@@ -59,3 +58,6 @@ func _physics_process(delta: float) -> void:
 	else:
 		if velocity.y < 0: animated_sprite.play(_jumping_string % _character_model)
 		else: animated_sprite.play(_falling_string % _character_model)
+
+func die() -> void:
+	print("kill player") # Create singleton that is called by unstable_platform to tell player to die
