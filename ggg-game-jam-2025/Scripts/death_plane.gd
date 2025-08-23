@@ -1,6 +1,6 @@
 extends Area2D
 
-var _active = false
+@export var _active = false
 
 func set_death_plane(boolean: bool) -> void:
 	_active = boolean

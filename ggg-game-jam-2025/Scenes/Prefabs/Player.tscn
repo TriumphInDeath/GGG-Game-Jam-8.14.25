@@ -946,7 +946,5 @@ shape = SubResource("CapsuleShape2D_42ksm")
 position = Vector2(112, 50)
 sprite_frames = SubResource("SpriteFrames_cwmp0")
 animation = &"respawn"
-frame = 2
-frame_progress = 0.369074
 
 [node name="Timer" type="Timer" parent="."]

@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bvdsbgnjyo8hf"]
+[gd_scene load_steps=3 format=3 uid="uid://bvdsbgnjyo8hf"]
 
 [ext_resource type="Texture2D" uid="uid://c17y5f2cq322j" path="res://Sprites/awesom_fridge.PNG" id="1_lb8te"]
+[ext_resource type="Texture2D" uid="uid://c78uwduee6poo" path="res://Sprites/fridgeLogo.PNG" id="2_d47ho"]
 
 [node name="Fridge" type="Sprite2D"]
 z_index = -10
@@ -14,3 +15,7 @@ polygon = PackedVector2Array(-1342, -156, -699, -148, -592, -79, -593, -10, -709
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
 position = Vector2(0, -1300)
 polygon = PackedVector2Array(-1342, -156, -698, -148, -592, -79, -593, -10, -709, 32, -1302, 22, -1344, -24)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1534, -3236)
+texture = ExtResource("2_d47ho")

@@ -1,11 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://chtojhancwlfv"]
+[gd_scene load_steps=11 format=3 uid="uid://chtojhancwlfv"]
 
 [ext_resource type="PackedScene" uid="uid://bvdsbgnjyo8hf" path="res://Scenes/Prefabs/fridge.tscn" id="1_xgxfi"]
 [ext_resource type="PackedScene" uid="uid://ckra6frjy5j33" path="res://Scenes/Prefabs/Player.tscn" id="2_5f3p6"]
 [ext_resource type="Texture2D" uid="uid://d4nj2o4b7ryk4" path="res://Sprites/FridgeMagnets/sprite_sheet_test.PNG" id="3_jv26f"]
 [ext_resource type="PackedScene" uid="uid://cdyqa5vl25grd" path="res://Scenes/Prefabs/unstable_platform.tscn" id="4_rb0md"]
+[ext_resource type="Texture2D" uid="uid://baxtgkhradhvx" path="res://Sprites/FridgeMagnets/yesitisanupsidedown_ladybug.PNG" id="5_jv26f"]
 [ext_resource type="PackedScene" uid="uid://cjxlwti12625q" path="res://Scenes/Prefabs/toggle_clip.tscn" id="5_u5ghp"]
 [ext_resource type="PackedScene" uid="uid://b0r7wt21l3gsi" path="res://Scenes/Prefabs/finish_zone.tscn" id="6_hwvp3"]
+[ext_resource type="Texture2D" uid="uid://blwpaei6qnp60" path="res://Sprites/FridgeMagnets/cheeze.PNG" id="6_rb0md"]
 [ext_resource type="PackedScene" uid="uid://bykmilt8o5fv4" path="res://Scenes/Prefabs/death_plane.tscn" id="7_5f3p6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jiqwm"]
@@ -14,11 +16,15 @@ size = Vector2(928, 447)
 [node name="Level 1" type="Node2D"]
 
 [node name="Fridge" parent="." instance=ExtResource("1_xgxfi")]
-position = Vector2(0, 2260)
+position = Vector2(0, 2060)
+
+[node name="FinishZone" parent="." instance=ExtResource("6_hwvp3")]
+position = Vector2(0, -1465)
+next_level = "level_2"
 
 [node name="Player" parent="." instance=ExtResource("2_5f3p6")]
 z_index = 5
-position = Vector2(-10, 38)
+position = Vector2(-1052, 516)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 offset = Vector2(0, -150)
@@ -31,7 +37,7 @@ position_smoothing_speed = 50.0
 [node name="Static Platforms" type="Node" parent="Platforms"]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Platforms/Static Platforms"]
-position = Vector2(100, 200)
+position = Vector2(400, 200)
 
 [node name="Sprite2D" type="Sprite2D" parent="Platforms/Static Platforms/StaticBody2D"]
 position = Vector2(0, 150)
@@ -45,7 +51,7 @@ shape = SubResource("RectangleShape2D_jiqwm")
 one_way_collision = true
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="Platforms/Static Platforms"]
-position = Vector2(350, -450)
+position = Vector2(600, -475)
 
 [node name="Sprite2D" type="Sprite2D" parent="Platforms/Static Platforms/StaticBody2D2"]
 position = Vector2(0, 150)
@@ -58,22 +64,50 @@ position = Vector2(-4, 153.5)
 shape = SubResource("RectangleShape2D_jiqwm")
 one_way_collision = true
 
+[node name="StaticBody2D3" type="StaticBody2D" parent="Platforms/Static Platforms"]
+position = Vector2(300, -1000)
+
+[node name="Sprite2D" type="Sprite2D" parent="Platforms/Static Platforms/StaticBody2D3"]
+texture = ExtResource("5_jv26f")
+region_rect = Rect2(1247.63, 15.102, 955.09, 467.384)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/Static Platforms/StaticBody2D3"]
+polygon = PackedVector2Array(-150, -72, 117, -64, 125, -48, 127, -19, 125, 11, 118, 42, 110, 53, 91, 74, 56, 105, 32, 124, 19, 130, 8, 128, -18, 117, -71, 82, -94, 59, -102, 47, -117, 43, -128, 41, -144, 34, -150, 28, -159, 17, -165, 0, -166, -20, -165, -41, -157, -58)
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="Platforms/Static Platforms"]
+position = Vector2(-300, 400)
+rotation = -0.125664
+
+[node name="Sprite2D" type="Sprite2D" parent="Platforms/Static Platforms/StaticBody2D4"]
+texture = ExtResource("6_rb0md")
+region_rect = Rect2(1247.63, 15.102, 955.09, 467.384)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/Static Platforms/StaticBody2D4"]
+rotation = 0.523599
+polygon = PackedVector2Array(-218, 8, -219, 24, -201, 45, -185, 43, -175, 46, -168, 53, -167, 59, -170, 68, -173, 77, -127, 126, -116, 118, -106, 114, -95, 113, -88, 116, -84, 119, -82, 125, -81, 127, -80, 133, -81, 138, -84, 148, -88, 154, -95, 158, -96, 162, -68, 190, -62, 187, 17, 45, 10, 35, 8, 25, 9, 15, 11.3741, 9.65839, 13, 6, 17, 2, 21, -1, 28, -2, 38, 1, 42, -2, 105, -120, 96, -127, 92, -134, 94, -144, 98, -154, 83, -162)
+
 [node name="Unstable Platforms" type="Node" parent="Platforms"]
 
 [node name="UnstablePlatform" parent="Platforms/Unstable Platforms" instance=ExtResource("4_rb0md")]
-position = Vector2(900, 50)
-
-[node name="UnstablePlatform2" parent="Platforms/Unstable Platforms" instance=ExtResource("4_rb0md")]
-position = Vector2(1200, -200)
+position = Vector2(-200, -700)
 
 [node name="Toggle Clips" type="Node" parent="Platforms"]
 
 [node name="ToggleClip" parent="Platforms/Toggle Clips" instance=ExtResource("5_u5ghp")]
-position = Vector2(-364, -682)
+position = Vector2(1100, 150)
 
-[node name="FinishZone" parent="." instance=ExtResource("6_hwvp3")]
-position = Vector2(0, -1265)
-next_level = "level_2"
+[node name="AnimatedSprite2D" parent="Platforms/Toggle Clips/ToggleClip" index="0"]
+animation = &"open"
+autoplay = "open"
+
+[node name="HeldObject" parent="Platforms/Toggle Clips/ToggleClip" index="2"]
+visible = false
+
+[node name="ToggleClip2" parent="Platforms/Toggle Clips" instance=ExtResource("5_u5ghp")]
+position = Vector2(1450, -125)
 
 [node name="DeathPlane" parent="." instance=ExtResource("7_5f3p6")]
-position = Vector2(0, 300)
+position = Vector2(0, 800)
+_active = true
+
+[editable path="Platforms/Toggle Clips/ToggleClip"]
