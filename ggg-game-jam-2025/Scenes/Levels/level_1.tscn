@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://chtojhancwlfv"]
+[gd_scene load_steps=9 format=3 uid="uid://chtojhancwlfv"]
 
 [ext_resource type="PackedScene" uid="uid://bvdsbgnjyo8hf" path="res://Scenes/Prefabs/fridge.tscn" id="1_xgxfi"]
 [ext_resource type="PackedScene" uid="uid://ckra6frjy5j33" path="res://Scenes/Prefabs/Player.tscn" id="2_5f3p6"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cdyqa5vl25grd" path="res://Scenes/Prefabs/unstable_platform.tscn" id="4_rb0md"]
 [ext_resource type="PackedScene" uid="uid://cjxlwti12625q" path="res://Scenes/Prefabs/toggle_clip.tscn" id="5_u5ghp"]
 [ext_resource type="PackedScene" uid="uid://b0r7wt21l3gsi" path="res://Scenes/Prefabs/finish_zone.tscn" id="6_hwvp3"]
+[ext_resource type="PackedScene" uid="uid://bykmilt8o5fv4" path="res://Scenes/Prefabs/death_plane.tscn" id="7_5f3p6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jiqwm"]
 size = Vector2(928, 447)
@@ -73,3 +74,6 @@ position = Vector2(-364, -682)
 [node name="FinishZone" parent="." instance=ExtResource("6_hwvp3")]
 position = Vector2(0, -1265)
 next_level = "level_2"
+
+[node name="DeathPlane" parent="." instance=ExtResource("7_5f3p6")]
+position = Vector2(0, 300)
