@@ -19,11 +19,14 @@ var _running_string = "%s_running"
 
 # @onready delays calling this until after children have loaded so the sprite can be found
 @onready var animated_sprite = $AnimatedSprite2D
+@onready var respawn_animation = $RespawnAnimatedSprite2D
 @onready var timer = $Timer
 
 
 func _ready() -> void:
 	_character_model = CharacterChoice.get_character_choice()
+	animated_sprite.hide()
+	respawn_animation.play()
 	
 	SignalBus.kill_player.connect(die)
 
@@ -61,6 +64,10 @@ func _physics_process(delta: float) -> void:
 	else:
 		if velocity.y < 0: animated_sprite.play(_jumping_string % _character_model)
 		else: animated_sprite.play(_falling_string % _character_model)
+
+func _process(delta: float) -> void:
+	if (respawn_animation.frame == 5):
+		animated_sprite.visible = true
 
 func die() -> void:
 	timer.start()

@@ -41,20 +41,19 @@ func _stop_hovering() -> void:
 
 
 func _input(event: InputEvent) -> void:
-	if (Input.is_action_just_pressed("ui_accept")):
-		# Goes to test_level when cutscene is finished. CHANGE TO LEVEL 1 WHEN CREATED
-		if (animated_sprite.frame == 4):
-			get_tree().change_scene_to_file("res://Scenes/Levels/level_1.tscn")
-		
-		if (not _in_character_selection and animated_sprite.frame < 4):
-			if (not (animated_sprite.animation == "intro_cutscene_start" and animated_sprite.frame == 3)):
-				animated_sprite.frame += 1
-	
 	
 	if (not _in_character_selection and animated_sprite.animation == "intro_cutscene_start" and animated_sprite.frame == 3):
 		bear_outline.self_modulate.a = 0.5
 		bunny_outline.self_modulate.a = 0.5
 		_in_character_selection = true
+		
+	if (Input.is_action_just_pressed("ui_accept")):
+		# Goes to test_level when cutscene is finished. CHANGE TO LEVEL 1 WHEN CREATED
+		if (animated_sprite.frame == 6):
+			get_tree().change_scene_to_file("res://Scenes/Levels/level_1.tscn")
+		
+		if (not _in_character_selection and animated_sprite.frame < 6):
+			animated_sprite.frame += 1
 	
 	
 	# Allows UI buttons to navigate character selection screen
