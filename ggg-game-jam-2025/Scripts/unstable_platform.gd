@@ -23,7 +23,7 @@ func _process(delta: float) -> void:
 		if (randi_range(0, 5) == 0):
 			sprite.transform.origin += Vector2(randi_range(-SHAKE, SHAKE), randi_range(-SHAKE, SHAKE))
 	if (_collapsed):
-		sprite.transform.origin.y += 20
+		sprite.transform.origin.y += 10
 
 
 func _on_stood_on_body_entered(body: Node2D) -> void:
@@ -46,10 +46,4 @@ func _collapse() -> void:
 	_collapsed = true
 	_shaking = false
 	collision_shape.set_deferred("disabled", true)
-	death_plane.set_deferred("disabled", false)
-
-
-func _on_death_plane_body_entered(body: Node2D) -> void:
-	if (body.name == "Player"):
-		CharacterChoice.kill_player() 
-		# Create Singleton telling player to die, change death plane into something other than a world boundary
+	death_plane.set_death_plane(true)

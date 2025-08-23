@@ -1,25 +1,28 @@
-[gd_scene load_steps=10 format=3 uid="uid://cjxlwti12625q"]
+[gd_scene load_steps=13 format=3 uid="uid://cjxlwti12625q"]
 
 [ext_resource type="Script" uid="uid://ckbq7glefqqhq" path="res://Scripts/toggle_clip.gd" id="1_mr4ip"]
-[ext_resource type="Texture2D" uid="uid://d4nj2o4b7ryk4" path="res://Sprites/sprite_sheet_test.PNG" id="2_t8vvr"]
+[ext_resource type="Texture2D" uid="uid://d4nj2o4b7ryk4" path="res://Sprites/FridgeMagnets/sprite_sheet_test.PNG" id="2_t8vvr"]
+[ext_resource type="Texture2D" uid="uid://66ckpxf556is" path="res://Sprites/FridgeMagnets/clip_closedEmpty.PNG" id="3_a8da2"]
+[ext_resource type="Texture2D" uid="uid://ypdrpw14j2e8" path="res://Sprites/FridgeMagnets/clip_closedPaper.PNG" id="4_3fnji"]
+[ext_resource type="Texture2D" uid="uid://kwfegnge5q58" path="res://Sprites/FridgeMagnets/clip_closed.PNG" id="5_cponq"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_mr4ip"]
-atlas = ExtResource("2_t8vvr")
-region = Rect2(4492, 0, 499, 500)
+[sub_resource type="AtlasTexture" id="AtlasTexture_sl4j5"]
+atlas = ExtResource("3_a8da2")
+region = Rect2(0, 0, 500, 500)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_t8vvr"]
-atlas = ExtResource("2_t8vvr")
-region = Rect2(3993, 0, 499, 500)
+[sub_resource type="AtlasTexture" id="AtlasTexture_3fnji"]
+atlas = ExtResource("4_3fnji")
+region = Rect2(125, 75, 250, 350)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_iho0v"]
-atlas = ExtResource("2_t8vvr")
-region = Rect2(4991, 0, 499, 500)
+[sub_resource type="AtlasTexture" id="AtlasTexture_86x8u"]
+atlas = ExtResource("5_cponq")
+region = Rect2(0, 0, 500, 500)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_a8da2"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_mr4ip")
+"texture": SubResource("AtlasTexture_sl4j5")
 }],
 "loop": false,
 "name": &"closed",
@@ -27,7 +30,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_t8vvr")
+"texture": SubResource("AtlasTexture_3fnji")
 }],
 "loop": false,
 "name": &"holding_paper",
@@ -35,7 +38,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_iho0v")
+"texture": SubResource("AtlasTexture_86x8u")
 }],
 "loop": false,
 "name": &"open",
@@ -43,14 +46,14 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mr4ip"]
-size = Vector2(237.789, 192.378)
+size = Vector2(237.789, 175.218)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a8da2"]
 atlas = ExtResource("2_t8vvr")
 region = Rect2(0, 849.305, 485.231, 769.628)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t8vvr"]
-size = Vector2(8, 190)
+size = Vector2(8, 172.183)
 
 [node name="ToggleClip" type="AnimatableBody2D"]
 script = ExtResource("1_mr4ip")
@@ -62,20 +65,20 @@ autoplay = "closed"
 offset = Vector2(13, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-34.329, 1.866)
-rotation = 1.69122
+position = Vector2(-11.3751, 8.24238)
+rotation = 1.62316
 shape = SubResource("RectangleShape2D_mr4ip")
 
 [node name="HeldObject" type="Sprite2D" parent="."]
 z_index = -1
-position = Vector2(-19, 425)
+position = Vector2(7, 426)
 texture = SubResource("AtlasTexture_a8da2")
 
 [node name="StoodOn" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StoodOn"]
-position = Vector2(-19.978, -116.03)
-rotation = 1.69122
+position = Vector2(-5, -110)
+rotation = 1.62316
 shape = SubResource("RectangleShape2D_t8vvr")
 
 [connection signal="body_entered" from="StoodOn" to="." method="_on_stood_on_body_entered"]

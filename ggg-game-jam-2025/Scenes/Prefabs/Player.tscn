@@ -860,10 +860,11 @@ script = ExtResource("1_fiu32")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ley4d")
-animation = &"bunny_running"
-frame = 23
-frame_progress = 1.0
+animation = &"bear_idle"
+flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-3, 11)
 shape = SubResource("CapsuleShape2D_42ksm")
+
+[node name="Timer" type="Timer" parent="."]

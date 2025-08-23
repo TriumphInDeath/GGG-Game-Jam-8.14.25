@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d4nj2o4b7ryk4"
-path="res://.godot/imported/sprite_sheet_test.PNG-546ccb4859e78669ce279155ac6190bd.ctex"
+uid="uid://kwfegnge5q58"
+path="res://.godot/imported/clip_closed.PNG-82d5109d187968567dd4bd349622da08.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/sprite_sheet_test.PNG"
-dest_files=["res://.godot/imported/sprite_sheet_test.PNG-546ccb4859e78669ce279155ac6190bd.ctex"]
+source_file="res://Sprites/FridgeMagnets/clip_closed.PNG"
+dest_files=["res://.godot/imported/clip_closed.PNG-82d5109d187968567dd4bd349622da08.ctex"]
 
 [params]
 

@@ -10,6 +10,3 @@ func set_character_choice(choice: String) -> void:
 
 func get_character_choice() -> String:
 	return _character_choice
-
-func kill_player() -> void:
-	pass # Look into using a singleton and/or custom signals to tell player to die

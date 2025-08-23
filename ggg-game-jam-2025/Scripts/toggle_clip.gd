@@ -21,4 +21,3 @@ func _open() -> void:
 	_opened = true
 	animated_sprite.play("open")
 	collision_shape.disabled = true
-	print("open") # transform.y += 100

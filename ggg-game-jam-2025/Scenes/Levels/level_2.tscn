@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://byjv7ehbtdm7"]
+
+[ext_resource type="PackedScene" uid="uid://bvdsbgnjyo8hf" path="res://Scenes/Prefabs/fridge.tscn" id="1_oylv5"]
+[ext_resource type="PackedScene" uid="uid://ckra6frjy5j33" path="res://Scenes/Prefabs/Player.tscn" id="2_w2ac1"]
+[ext_resource type="PackedScene" uid="uid://b0r7wt21l3gsi" path="res://Scenes/Prefabs/finish_zone.tscn" id="3_ovj6s"]
+
+[node name="Level 2" type="Node2D"]
+
+[node name="Fridge" parent="." instance=ExtResource("1_oylv5")]
+position = Vector2(0, 2260)
+
+[node name="Player" parent="." instance=ExtResource("2_w2ac1")]
+z_index = 5
+position = Vector2(-10, 38)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+offset = Vector2(0, -150)
+zoom = Vector2(0.5, 0.5)
+position_smoothing_enabled = true
+position_smoothing_speed = 50.0
+
+[node name="FinishZone" parent="." instance=ExtResource("3_ovj6s")]
+position = Vector2(0, -1265)
+next_level = "level_2"

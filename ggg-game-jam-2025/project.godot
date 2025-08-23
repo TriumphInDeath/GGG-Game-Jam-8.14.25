@@ -18,6 +18,7 @@ config/icon="res://Sprites/icon.svg"
 [autoload]
 
 CharacterChoice="*res://Scripts/character_choice.gd"
+SignalBus="*res://Scripts/signal_bus.gd"
 
 [input]
 

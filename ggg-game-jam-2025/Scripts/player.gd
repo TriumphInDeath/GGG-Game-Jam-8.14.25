@@ -19,10 +19,13 @@ var _running_string = "%s_running"
 
 # @onready delays calling this until after children have loaded so the sprite can be found
 @onready var animated_sprite = $AnimatedSprite2D
+@onready var timer = $Timer
 
 
 func _ready() -> void:
 	_character_model = CharacterChoice.get_character_choice()
+	
+	SignalBus.kill_player.connect(die)
 
 
 func _physics_process(delta: float) -> void:
@@ -60,4 +63,6 @@ func _physics_process(delta: float) -> void:
 		else: animated_sprite.play(_falling_string % _character_model)
 
 func die() -> void:
-	print("kill player") # Create singleton that is called by unstable_platform to tell player to die
+	timer.start()
+	await timer.timeout
+	if (is_inside_tree()): get_tree().reload_current_scene()
