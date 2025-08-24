@@ -1,9 +1,10 @@
 extends AnimatableBody2D
 
-const SHAKE = 5
+const SHAKE = 4
 
 var _shaking = false
 var _collapsed = false
+
 
 @onready var collapse_timer = $CollapseTimer
 @onready var sprite = $Sprite2D

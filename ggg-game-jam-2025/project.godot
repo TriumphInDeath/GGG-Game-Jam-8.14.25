@@ -13,12 +13,16 @@ config_version=5
 config/name="GGG Game Jam 2025"
 run/main_scene="uid://bxad8qlrmri4o"
 config/features=PackedStringArray("4.4", "Forward Plus")
-config/icon="res://Sprites/icon.svg"
+config/icon="res://Sprites/Other/icon.svg"
 
 [autoload]
 
 CharacterChoice="*res://Scripts/character_choice.gd"
 SignalBus="*res://Scripts/signal_bus.gd"
+
+[display]
+
+window/size/resizable=false
 
 [input]
 
