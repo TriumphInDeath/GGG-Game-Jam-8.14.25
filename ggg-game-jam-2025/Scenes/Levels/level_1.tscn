@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bvdsbgnjyo8hf" path="res://Scenes/Prefabs/fridge.tscn" id="1_xgxfi"]
 [ext_resource type="PackedScene" uid="uid://ckra6frjy5j33" path="res://Scenes/Prefabs/Player.tscn" id="2_5f3p6"]
-[ext_resource type="Texture2D" uid="uid://d4nj2o4b7ryk4" path="res://Sprites/FridgeMagnets/sprite_sheet_test.PNG" id="3_jv26f"]
+[ext_resource type="Texture2D" uid="uid://cia8qfcxc1vtu" path="res://Sprites/FridgeMagnets/METALBLOCK.PNG" id="4_31phq"]
 [ext_resource type="PackedScene" uid="uid://cdyqa5vl25grd" path="res://Scenes/Prefabs/unstable_platform.tscn" id="4_rb0md"]
 [ext_resource type="Texture2D" uid="uid://baxtgkhradhvx" path="res://Sprites/FridgeMagnets/yesitisanupsidedown_ladybug.PNG" id="5_jv26f"]
 [ext_resource type="PackedScene" uid="uid://cjxlwti12625q" path="res://Scenes/Prefabs/toggle_clip.tscn" id="5_u5ghp"]
@@ -20,7 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://clv1blp8i01y8" path="res://Sprites/FridgeMagnets/letters.PNG" id="14_tjl6l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jiqwm"]
-size = Vector2(928, 447)
+size = Vector2(907, 395)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7r2dd"]
 radius = 18.0008
@@ -64,13 +64,13 @@ position_smoothing_speed = 50.0
 position = Vector2(-800, 1000)
 
 [node name="Sprite2D" type="Sprite2D" parent="Platforms/Static Platforms/StartingPlatform"]
-position = Vector2(0, 150)
-texture = ExtResource("3_jv26f")
-region_enabled = true
+position = Vector2(-2, 146)
+scale = Vector2(2.285, 2.285)
+texture = ExtResource("4_31phq")
 region_rect = Rect2(1247.63, 15.102, 955.09, 467.384)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Static Platforms/StartingPlatform"]
-position = Vector2(-4, 153.5)
+position = Vector2(-14.5, 127.5)
 shape = SubResource("RectangleShape2D_jiqwm")
 one_way_collision = true
 
