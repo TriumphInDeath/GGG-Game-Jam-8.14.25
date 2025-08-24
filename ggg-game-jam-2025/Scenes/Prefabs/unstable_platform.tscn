@@ -1,12 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://cdyqa5vl25grd"]
+[gd_scene load_steps=6 format=3 uid="uid://cdyqa5vl25grd"]
 
 [ext_resource type="Script" uid="uid://c1u4m5y84frgm" path="res://Scripts/unstable_platform.gd" id="1_um5h4"]
-[ext_resource type="Texture2D" uid="uid://d4nj2o4b7ryk4" path="res://Sprites/FridgeMagnets/sprite_sheet_test.PNG" id="2_um5h4"]
+[ext_resource type="Texture2D" uid="uid://d2ndefykx30wq" path="res://Sprites/FridgeMagnets/METALPIN.PNG" id="2_3a73m"]
 [ext_resource type="PackedScene" uid="uid://bykmilt8o5fv4" path="res://Scenes/Prefabs/death_plane.tscn" id="3_3a73m"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3a73m"]
-atlas = ExtResource("2_um5h4")
-region = Rect2(1192, 1192, 112, 112)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_um5h4"]
 radius = 66.0
@@ -20,8 +16,9 @@ height = 152.0
 script = ExtResource("1_um5h4")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(1.55, 1.55)
-texture = SubResource("AtlasTexture_3a73m")
+position = Vector2(8, 46.775)
+scale = Vector2(1.26, 1.26)
+texture = ExtResource("2_3a73m")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2, 0)
@@ -35,7 +32,6 @@ one_shot = true
 [node name="DeathPlane" parent="." instance=ExtResource("3_3a73m")]
 
 [node name="StoodOn" type="Area2D" parent="."]
-scale = Vector2(1, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StoodOn"]
 position = Vector2(2, -10)

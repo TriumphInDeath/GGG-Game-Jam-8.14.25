@@ -14,7 +14,7 @@
 [ext_resource type="Script" uid="uid://c33rwreoyur4o" path="res://Scripts/whiteboard.gd" id="8_k2mw1"]
 [ext_resource type="Texture2D" uid="uid://cedv0kccc1bnp" path="res://Sprites/FridgeMagnets/dice.PNG" id="9_afv7b"]
 [ext_resource type="Texture2D" uid="uid://hhc2o6gavkde" path="res://Sprites/FridgeMagnets/pandaButt.PNG" id="10_7r2dd"]
-[ext_resource type="Texture2D" uid="uid://dplpblynbh4v" path="res://Sprites/FridgeMagnets/TURTLE.PNG" id="10_irw6p"]
+[ext_resource type="Texture2D" uid="uid://y67a138asub6" path="res://Sprites/FridgeMagnets/TURTLE(1).PNG" id="10_31phq"]
 [ext_resource type="Texture2D" uid="uid://camgvf4e081e4" path="res://Sprites/FridgeMagnets/BEAR.PNG" id="12_31phq"]
 [ext_resource type="Texture2D" uid="uid://8fmsbnu3e5lf" path="res://Sprites/FridgeMagnets/photo_smirk.PNG" id="14_3628d"]
 [ext_resource type="Texture2D" uid="uid://clv1blp8i01y8" path="res://Sprites/FridgeMagnets/letters.PNG" id="14_tjl6l"]
@@ -130,7 +130,7 @@ position = Vector2(-200, -1175)
 rotation = -0.1309
 
 [node name="Sprite2D" type="Sprite2D" parent="Platforms/Static Platforms/Turtle"]
-texture = ExtResource("10_irw6p")
+texture = ExtResource("10_31phq")
 offset = Vector2(-0.585, 14.505)
 flip_h = true
 region_rect = Rect2(494, 134, 495, 302)
@@ -161,7 +161,6 @@ shape = SubResource("RectangleShape2D_7r2dd")
 [node name="CanadaBear" type="StaticBody2D" parent="Platforms/Static Platforms"]
 position = Vector2(400, -3125)
 rotation = -0.261799
-scale = Vector2(1, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="Platforms/Static Platforms/CanadaBear"]
 texture = ExtResource("12_31phq")
@@ -232,7 +231,6 @@ shape = SubResource("RectangleShape2D_tjl6l")
 
 [node name="CollisionShape2D" parent="Platforms/Letters/LetterB/StoodOn" index="0"]
 position = Vector2(0.5, -50.9998)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_31phq")
 
 [node name="LetterE" parent="Platforms/Letters" instance=ExtResource("4_rb0md")]
