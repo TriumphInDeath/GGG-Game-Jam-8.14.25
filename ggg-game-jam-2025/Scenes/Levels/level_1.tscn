@@ -220,6 +220,7 @@ position = Vector2(-400, -2650)
 script = null
 
 [node name="Sprite2D" parent="Platforms/Letters/LetterB" index="0"]
+position = Vector2(0, 0)
 scale = Vector2(1, 1)
 texture = ExtResource("14_tjl6l")
 region_enabled = true
@@ -238,6 +239,7 @@ position = Vector2(-275, -2650)
 script = null
 
 [node name="Sprite2D" parent="Platforms/Letters/LetterE" index="0"]
+position = Vector2(0, 0)
 scale = Vector2(1, 1)
 texture = ExtResource("14_tjl6l")
 region_enabled = true
@@ -256,6 +258,7 @@ position = Vector2(-100, -2650)
 script = null
 
 [node name="Sprite2D" parent="Platforms/Letters/LetterS" index="0"]
+position = Vector2(0, 0)
 scale = Vector2(1, 1)
 texture = ExtResource("14_tjl6l")
 region_enabled = true
@@ -273,6 +276,7 @@ shape = SubResource("RectangleShape2D_31phq")
 position = Vector2(25, -2650)
 
 [node name="Sprite2D" parent="Platforms/Letters/LetterT" index="0"]
+position = Vector2(0, 0)
 scale = Vector2(1, 1)
 texture = ExtResource("14_tjl6l")
 region_enabled = true
@@ -291,6 +295,7 @@ position = Vector2(150, -2650)
 script = null
 
 [node name="Sprite2D" parent="Platforms/Letters/LetterU" index="0"]
+position = Vector2(0, 0)
 scale = Vector2(1, 1)
 texture = ExtResource("14_tjl6l")
 region_enabled = true
@@ -308,6 +313,7 @@ shape = SubResource("RectangleShape2D_31phq")
 position = Vector2(275, -2650)
 
 [node name="Sprite2D" parent="Platforms/Letters/LetterD" index="0"]
+position = Vector2(0, 0)
 scale = Vector2(1, 1)
 texture = ExtResource("14_tjl6l")
 region_enabled = true
@@ -325,6 +331,7 @@ shape = SubResource("RectangleShape2D_31phq")
 position = Vector2(400, -2650)
 
 [node name="Sprite2D" parent="Platforms/Letters/LetterI" index="0"]
+position = Vector2(0, 0)
 scale = Vector2(1, 1)
 texture = ExtResource("14_tjl6l")
 region_enabled = true
@@ -342,6 +349,7 @@ shape = SubResource("RectangleShape2D_31phq")
 position = Vector2(525, -2650)
 
 [node name="Sprite2D" parent="Platforms/Letters/LetterO" index="0"]
+position = Vector2(0, 0)
 scale = Vector2(1, 1)
 texture = ExtResource("14_tjl6l")
 region_enabled = true
@@ -359,6 +367,7 @@ shape = SubResource("RectangleShape2D_31phq")
 position = Vector2(650, -2650)
 
 [node name="Sprite2D" parent="Platforms/Letters/LetterU2" index="0"]
+position = Vector2(0, 0)
 scale = Vector2(1, 1)
 texture = ExtResource("14_tjl6l")
 region_enabled = true
@@ -377,6 +386,7 @@ position = Vector2(775, -2650)
 script = null
 
 [node name="Sprite2D" parent="Platforms/Letters/LetterS2" index="0"]
+position = Vector2(0, 0)
 scale = Vector2(1, 1)
 texture = ExtResource("14_tjl6l")
 region_enabled = true
